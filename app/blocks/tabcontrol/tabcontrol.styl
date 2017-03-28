@@ -1,0 +1,40 @@
+.tabcontrol
+
+	&__tabs
+		display flex
+		justify-content space-between
+		align-content center
+
+	&__tab-links
+		background-color white
+		flex-grow 1
+		padding 10px
+		text-align center
+		cursor pointer
+		background main-color
+
+		&:not(:last-of-type)
+			border-right 1px black solid
+
+	&__radio
+		display none
+
+	&__tab-content
+		display none
+		overflow-x hidden
+		height 100px
+
+		input[type='radio']:checked + &
+			display flex
+
+		&_inputs
+			flex-direction column
+			justify-content center
+
+			input
+				flex-grow 1
+				padding .5rem
+				border none
+
+				&:not(:last-of-type)
+					border-bottom 1px black solid

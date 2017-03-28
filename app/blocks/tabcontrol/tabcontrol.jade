@@ -1,0 +1,17 @@
+include ../slider/slider
+
+mixin tabcontrol()
+	+b.tabcontrol&attributes(attributes)
+		+e.tabs
+			+e('label').tab-links(for='meme-image') Memes
+			+e('label').tab-links(for='meme-text') Text
+
+		+e.tab-content-wrap
+			+e('input')#meme-image.radio(name='tab-pages', type='radio', checked)
+			+e.tab-content._slider
+				+slider
+
+			+e('input')#meme-text.radio(name='tab-pages', type='radio')
+			+e.tab-content._inputs
+				+e('input')#inputTopText.input(type='text' placeholder='Enter top text')
+				+e('input')#inputBottomText(type='text' placeholder='Enter bottom text')

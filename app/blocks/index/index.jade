@@ -1,0 +1,12 @@
+include ../navbar/navbar
+include ../hero/hero
+include ../tabcontrol/tabcontrol
+
+mixin index()
+	+b.index&attributes(attributes)
+		+e.navbar
+			+navbar
+		+e.hero
+			+hero
+		+e.tabcontrol
+			+tabcontrol
