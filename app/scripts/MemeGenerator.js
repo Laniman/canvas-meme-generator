@@ -83,10 +83,14 @@ export default class MemeGenerator {
 			bottomText
 		} = this.store.getState();
 		// console.dir(memeImage);
-		const {width, height} = calculateAspectRatioFit(memeImage.width, memeImage.height, this.container.offsetWidth, this.container.offsetHeight);
+		const {width, height} = calculateAspectRatioFit(memeImage.naturalWidth, memeImage.naturalHeight, this.container.offsetWidth, this.container.offsetHeight);
 		this.canvas.width = width;
 		this.canvas.height = height;
-		this.context.drawImage(memeImage, 0, 0, width, height);
+
+		const image = new Image();
+		image.src = memeImage.src;
+
+		this.context.drawImage(image, 0, 0, width, height);
 
 		Object.assign(this.context, this.config.textStyle);
 		// console.log(this.context);
