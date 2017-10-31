@@ -93,7 +93,6 @@ export default class MemeGenerator {
 		this.context.drawImage(image, 0, 0, width, height);
 
 		Object.assign(this.context, this.config.textStyle);
-		// console.log(this.context);
 
 		this.context.fillText(topText, this.canvas.width / 2, 0);
 		this.context.strokeText(topText, this.canvas.width / 2, 0);
